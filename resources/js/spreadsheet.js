@@ -5,13 +5,13 @@ import { fetch } from '@/table-edit/api.js';
 document.addEventListener('DOMContentLoaded', async () => {
     const el = document.getElementById('spreadsheet');
     const tableName = el.dataset.table;
-    let options = await fetch(tableName);
-    initialize(options)
+    let data = await fetch(tableName);
+    initialize(data)
 })
 
-function initialize(options) {
+function initialize(data) {
     const el = document.getElementById('spreadsheet')
     if (el) {
-        jspreadsheet(el, options)
+        jspreadsheet(el, data.options)
     }
 }
