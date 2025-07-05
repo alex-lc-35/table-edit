@@ -3,6 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
+Route::get('/test', function () {
+    return view('test');
+})->name('test');
+
+Route::get('/ma-page', function () {
+    return view('ma-page');
+})->name('ma-page');
+
+
 Route::get('/', function () {
     return Inertia::render('Welcome');
 })->name('home');
