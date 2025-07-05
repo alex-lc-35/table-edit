@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Modules\TableEdit\Tables\Loan;
+use App\Modules\TableEdit\Tables\ProductTableEdit;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ProductController extends Controller
@@ -48,5 +50,12 @@ class ProductController extends Controller
         $product->delete();
 
         return response()->json();
+    }
+
+    public function tableEdit()
+    {
+        $tableEdit = new ProductTableEdit();
+        $data = $tableEdit->render();
+        return response()->json($data);
     }
 }

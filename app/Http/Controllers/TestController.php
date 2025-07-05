@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Modules\TableEdit\Tables\Loan;
 
 class TestController extends Controller
 {
     public function index()
     {
-        $tableEdit = new Loan();
-        $data = $tableEdit->render();
+        $products = Product::query()->select(['name', 'price'])->get();
 
-        return response()->json([
-            'message' => $data
-        ]);
+        dd($products);
     }
 }
