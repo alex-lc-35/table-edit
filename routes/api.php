@@ -1,6 +1,10 @@
 <?php
+
+use App\Http\Controllers\TableEditController;
 use App\Http\Controllers\TestController;
 
 Route::get('/test', [TestController::class, 'index']);
 
-Route::get('/table/{name}', [TestController::class, 'table']);
+Route::prefix('table-edit')->group(function () {
+    Route::get('{name}', [TableEditController::class, 'show']);
+});

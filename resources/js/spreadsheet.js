@@ -3,7 +3,9 @@ import 'jspreadsheet-ce/dist/jspreadsheet.css'
 import 'jspreadsheet-ce/dist/jspreadsheet.themes.css'
 import { fetch } from '@/table-edit/api.js';
 document.addEventListener('DOMContentLoaded', async () => {
-    let options = await fetch('ma-super-table');
+    const el = document.getElementById('spreadsheet');
+    const tableName = el.dataset.table;
+    let options = await fetch(tableName);
     initialize(options)
 })
 

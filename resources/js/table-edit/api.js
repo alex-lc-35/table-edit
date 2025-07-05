@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8000/api',
+    baseURL: 'http://localhost:8000/api/table-edit',
 });
 
-export function fetch(params) {
+export function fetch(tableName) {
     console.log('[table-edit] fetch');
 
-    return instance('/table/' + params)
+    return instance('/' + tableName)
         .then((response) => {
             console.log('[table-edit] options', response.data);
             return response.data;
