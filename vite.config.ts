@@ -2,6 +2,7 @@ import vue from '@vitejs/plugin-vue';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
+import path from 'path';
 
 export default defineConfig({
     plugins: [
@@ -9,6 +10,8 @@ export default defineConfig({
             input: [
                 'resources/js/app.ts',
                 'resources/js/spreadsheet.js',
+                'resources/js/test.js',
+                'resources/js/table-edit/api.js',
             ],
             ssr: 'resources/js/ssr.ts',
             refresh: true,
@@ -23,4 +26,9 @@ export default defineConfig({
             },
         }),
     ],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, 'resources/js'),
+        },
+    },
 });

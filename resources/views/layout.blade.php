@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Mon site')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css') {{-- si tu utilises Vite --}}
+    @vite('resources/css/app.css')
 </head>
 <body class="min-h-screen flex flex-col bg-gray-500 text-gray-900">
 
