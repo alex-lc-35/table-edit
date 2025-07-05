@@ -6,7 +6,7 @@ use App\Modules\TableEdit\Tables\Loan;
 
 class TableEditController extends Controller
 {
-    public function show($name)
+    public function show()
     {
         $tableEdit = new Loan();
         $data = $tableEdit->render();
