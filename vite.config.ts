@@ -9,9 +9,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.ts',
-                'resources/js/spreadsheet.js',
                 'resources/js/test.js',
-                'resources/js/table-edit/api.js',
+                'resources/modules/table-edit/js/index.js'
             ],
             ssr: 'resources/js/ssr.ts',
             refresh: true,

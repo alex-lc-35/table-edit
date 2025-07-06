@@ -9,5 +9,5 @@
 
 @push('scripts')
     @vite('resources/js/test.js')
-    @vite('resources/js/spreadsheet.js')
+    @vite('resources/modules/table-edit/js/index.js')
 @endpush
