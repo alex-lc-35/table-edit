@@ -31,4 +31,12 @@ abstract class AbstractTable
             ->setData($this->data())
             ->generate();
     }
+
+    public function edit($row, $data)
+    {
+        return TableEditService::make($this->tableName())
+            ->setColumns($this->columns())
+            ->setData($this->data())
+            ->edit($row, $data);
+    }
 }

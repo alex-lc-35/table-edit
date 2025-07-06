@@ -17,3 +17,7 @@ export function fetch(tableName) {
             return null;
         });
 }
+
+export function edit() {
+    console.log('[table-edit] edit');
+}

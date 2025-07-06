@@ -34,6 +34,11 @@ class TableEditService
         return $this;
     }
 
+    public function edit($row, $data)
+    {
+        return true;
+    }
+
     public function generate(): array
     {
         return [

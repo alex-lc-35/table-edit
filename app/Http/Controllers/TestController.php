@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Modules\TableEdit\Tables\Loan;
 
 class TestController extends Controller
 {

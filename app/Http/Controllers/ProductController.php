@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Modules\TableEdit\Tables\Loan;
 use App\Modules\TableEdit\Tables\ProductTableEdit;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -52,10 +53,24 @@ class ProductController extends Controller
         return response()->json();
     }
 
-    public function tableEdit()
+    public function tableShow()
     {
         $tableEdit = new ProductTableEdit();
         $data = $tableEdit->render();
         return response()->json($data);
+    }
+
+    public function tableEdit(Request $request)
+    {
+        $row = $request->get('row');
+        $data = $request->get('data');
+
+        $tableEdit = new ProductTableEdit();
+        $res = $tableEdit->edit($row, $data);
+
+        return response()->json([
+            'status' => 'success',
+            'message' => $res,
+        ]);
     }
 }

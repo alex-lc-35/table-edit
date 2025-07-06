@@ -11,7 +11,18 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function initialize(data) {
     const el = document.getElementById('spreadsheet')
+
+    const options = {
+        ...data.options,
+        onchange: update,
+    };
+
     if (el) {
-        jspreadsheet(el, data.options)
+        jspreadsheet(el, options)
     }
+}
+
+function update(data){
+    console.log("update")
+    console.log(data)
 }
